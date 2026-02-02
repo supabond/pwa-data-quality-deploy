@@ -1,0 +1,39 @@
+hive:
+  driver: "org.apache.hive.jdbc.HiveDriver"
+  jdbc_url: "jdbc:hive2://hive-server:10000/default"
+  user: "hive"
+  password: "hive"
+  jar_path: "/opt/airflow/config/hive-jdbc-2.3.2-standalone.jar"
+
+postgres-staging:
+  user: "postgres"
+  password: "postgres"
+  host: "pg_staging_data"
+  port: 5432
+  database: "pwa-staging-data"
+
+# postgres-quality:
+#   user: "postgres"
+#   password: "postgres"
+#   host: "pg_quality_data"
+#   port: 5432
+#   database: "pwa-quality-data"
+
+postgres-quality:
+  user: "postgres"
+  host: "ep-quiet-feather-a1lj8pn9-pooler.ap-southeast-1.aws.neon.tech"
+  password: "npg_l2Eiz5gaVRAj"
+  port: 5432
+  database: "pwa-quality-data"
+
+openmetadata:
+  # host: http://localhost:8585
+  host: http://openmetadata-server:8585
+  token: eyJraWQiOiJHYjM4OWEtOWY3Ni1nZGpzLWE5MmotMDI0MmJrOTQzNTYiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJvcGVuLW1ldGFkYXRhLm9yZyIsInN1YiI6ImluZ2VzdGlvbi1ib3QiLCJlbWFpbCI6ImluZ2VzdGlvbi1ib3RAb3Blbm1ldGFkYXRhLm9yZyIsImlzQm90Ijp0cnVlLCJ0b2tlblR5cGUiOiJCT1QiLCJpYXQiOjE3NjcwODExNDIsImV4cCI6bnVsbH0.arPrrBzXL250o2ycOxR_jhFEIOb739-aWBY5cxtw_5od_gXOMBc-HlBzehW0ujihfhMvKlqGtWp-7p-41NaF9wHy2A6cHl0akmprNCMg5DRX4uZwI7YLW23UfAI_IfmErmoSI-5rZAPFtUqrKc6xLIsDFn0bf7nU3oLqD5hRGobIVU2llfPiqkjIqLNiOqv8qBy3EKILFzPoue_k2eI5fULdwuD40Iub-dpvJogGCwHS7ECSpmpBHc2FLe_oI67PKwXXhopgKXXErjuCV2GkwRR6KPOc2KlVlt2zaaryyKbM2eVyfMnd_bsLugN62UOFKgTwgD3qQ8do-EHf7XbbJg
+
+# postgres_bad_data:
+#   host: pg_bad_data
+#   port: 5432
+#   database: pwa-bad-data
+#   user: postgres
+#   password: postgres
