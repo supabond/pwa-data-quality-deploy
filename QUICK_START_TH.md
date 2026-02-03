@@ -121,6 +121,8 @@ bash deploy.sh
 
 สร้าง shared_pool = 1
 
+reference data =  https://docs.google.com/spreadsheets/d/1tUYwWVKKEKMf-kCCBUOVgJklvVT51Mkmke5l3_xheHU/edit?usp=sharing
+
 # หรือ Linux/Mac
 ./deploy.sh
 ```
