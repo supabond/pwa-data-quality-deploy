@@ -13,6 +13,9 @@ SCHEDULE = Variable.get("p1_schedule", default_var="0 1 5 * *") # Edit
 REPROCESS = Variable.get("p1_reprocess", default_var="false").lower() == "true" # Edit
 REMAIN_MONTH = int(Variable.get("p1_remain_month", default_var="3")) # Edit
 
+
+hive_config = "hive237"  # Edit
+
 opm_service = "pwa-staging-data"  # Edit
 
 schema_psql_staging = "staging"  # Edit
@@ -54,7 +57,7 @@ def transfer_hive_to_postgres_fn():
     reprocess_list = utils.fetch_reprocess_list(config, reprocess_query) if REPROCESS else []
     hive_query = ingestion_queries.get_tbProject_ingestion_query(start_ts, end_ts, start_ts_schedule, end_ts_schedule, reprocess_list)  # Edit
     table_schema = ingestion_queries.get_tbProject_staging_schema()  # Edit
-    utils.transfer_hive_to_postgres(table_psql_staging, schema_psql_staging, config, hive_query, table_schema, conflict_cols_staging, geometry_cols)
+    utils.transfer_hive_to_postgres(hive_config, table_psql_staging, schema_psql_staging, config, hive_query, table_schema, conflict_cols_staging, geometry_cols)
     
 
 def transfer_staging_to_quality_fn():

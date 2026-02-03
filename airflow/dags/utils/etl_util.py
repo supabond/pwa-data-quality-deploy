@@ -263,9 +263,9 @@ def extract_ref_rule_df(config, schema_psql_data_quality):
     print( rule_df.head(5) )
     return rule_df
 
-def transfer_hive_to_postgres(table_psql_staging, schema_psql_staging, config, hive_query, table_schema, conflict_cols_staging, geometry_cols):
+def transfer_hive_to_postgres(hive_config,table_psql_staging, schema_psql_staging, config, hive_query, table_schema, conflict_cols_staging, geometry_cols):
     
-    hive_conf = config['hive']
+    hive_conf = config[hive_config]
     conn_hive = None
     cursor = None
     
